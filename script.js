@@ -16,7 +16,7 @@ function error(){
     p.id = "error-message"
     p.style.color = "red"
     p.style = "text-align: center; font-family: 'Roboto', sans-serif; margin-bottom: 10px; font-size: 20px;"
-
+    
     form.appendChild(p)
 }
 
@@ -64,5 +64,7 @@ input.addEventListener("keypress", function(event){
 })
 
 btn.addEventListener("click", function(){
+    const errorMessage = document.querySelector("#error-message")
+    if(errorMessage) form.removeChild(errorMessage)
     saqlash(input.value)
 })
